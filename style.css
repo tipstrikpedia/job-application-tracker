@@ -7,7 +7,21 @@
   --primary-dark: #1d4ed8;
   --border: #d9e2f2;
   --danger: #dc2626;
+  --warning: #f59e0b;
   --shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --panel: #172033;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+  --border: #334155;
+  --danger: #ef4444;
+  --warning: #fbbf24;
+  --shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -27,10 +41,17 @@ body {
   color: white;
 }
 
-.hero div,
+.hero-content,
 .container {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .eyebrow {
@@ -119,7 +140,8 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 12px;
   font: inherit;
-  background: white;
+  background: var(--panel);
+  color: var(--text);
 }
 
 textarea {
@@ -142,9 +164,43 @@ button:hover {
   background: var(--primary-dark);
 }
 
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: inherit;
+}
+
+.secondary-btn:hover {
+  background: rgba(37, 99, 235, 0.12);
+}
+
 .delete-btn {
   background: var(--danger);
   padding: 8px 10px;
+}
+
+.edit-btn {
+  background: var(--warning);
+  padding: 8px 10px;
+  color: #172033;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-actions,
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .toolbar {
@@ -155,8 +211,9 @@ button:hover {
   flex-wrap: wrap;
 }
 
-.toolbar input {
-  max-width: 360px;
+.toolbar-actions input,
+.toolbar-actions select {
+  max-width: 260px;
 }
 
 .table-wrapper {
@@ -166,7 +223,7 @@ button:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 850px;
+  min-width: 900px;
 }
 
 th,
@@ -192,6 +249,11 @@ th {
   font-size: 13px;
 }
 
+body.dark .status {
+  background: #1e3a8a;
+  color: #dbeafe;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -199,16 +261,25 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .hero-content,
   .cards,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    flex-direction: column;
   }
 
   .cards {
     margin-top: -32px;
   }
 
-  button {
+  button,
+  .toolbar-actions,
+  .toolbar-actions input,
+  .toolbar-actions select {
     width: 100%;
+    max-width: none;
   }
 }
