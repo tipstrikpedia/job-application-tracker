@@ -11,7 +11,7 @@
   --shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
 }
 
-body.dark {
+:root[data-theme="dark"] {
   --bg: #0f172a;
   --panel: #172033;
   --text: #f8fafc;
@@ -33,6 +33,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .hero {
@@ -91,6 +92,7 @@ h1 {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   border-radius: 18px;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .card {
@@ -249,7 +251,7 @@ th {
   font-size: 13px;
 }
 
-body.dark .status {
+:root[data-theme="dark"] .status {
   background: #1e3a8a;
   color: #dbeafe;
 }
