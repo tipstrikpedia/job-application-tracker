@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Simple Portfolio Project</p>
+      <h1>Job Application Tracker</h1>
+      <p class="subtitle">
+        Track job applications, countries, status, and notes in one simple dashboard.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <article class="card">
+        <span>Total Applications</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="card">
+        <span>Interview</span>
+        <strong id="interviewCount">0</strong>
+      </article>
+      <article class="card">
+        <span>Accepted</span>
+        <strong id="acceptedCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Add New Application</h2>
+      <form id="applicationForm" class="form-grid">
+        <label>
+          Company
+          <input type="text" id="company" placeholder="Example: Green Farm Ltd" required />
+        </label>
+
+        <label>
+          Position
+          <input type="text" id="position" placeholder="Example: Farm Worker" required />
+        </label>
+
+        <label>
+          Country
+          <input type="text" id="country" placeholder="Example: Canada" required />
+        </label>
+
+        <label>
+          Status
+          <select id="status">
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Accepted">Accepted</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </label>
+
+        <label>
+          Date
+          <input type="date" id="date" required />
+        </label>
+
+        <label class="full">
+          Notes
+          <textarea id="notes" placeholder="Write notes, contact name, or next step"></textarea>
+        </label>
+
+        <button type="submit">Save Application</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <h2>Application List</h2>
+        <input type="search" id="searchInput" placeholder="Search company, position, country..." />
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Position</th>
+              <th>Country</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Notes</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="applicationTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
