@@ -171,21 +171,21 @@ function exportToCSV() {
   URL.revokeObjectURL(url);
 }
 
-function loadTheme() {
-  const savedTheme = localStorage.getItem("theme");
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+}
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    themeToggle.textContent = "Light Mode";
-  }
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  applyTheme(savedTheme);
 }
 
 function toggleTheme() {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  themeToggle.textContent = isDark ? "Light Mode" : "Dark Mode";
+  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  applyTheme(nextTheme);
 }
 
 form.addEventListener("submit", event => {
