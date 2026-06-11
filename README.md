@@ -1,46 +1,42 @@
 # Job Application Tracker
 
-A simple web application to track job applications.  
-This project is made with **HTML, CSS, and JavaScript**.
+A simple and beginner-friendly web application for tracking job applications. This project helps users record companies, job positions, countries, application status, dates, and notes in one place.
+
+## Live Demo
+
+Visit the website here: https://tipstrikpedia.github.io/job-application-tracker/
+
+## About This Project
+
+Job Application Tracker is a small portfolio project built with HTML, CSS, and JavaScript. It is designed for job seekers who want a simple way to organize their job applications without using complicated tools.
+
+This project also demonstrates basic front-end development skills such as form handling, DOM manipulation, responsive layout, and browser local storage.
 
 ## Features
 
-- Add job application data
-- Track company, position, country, status, date, and notes
-- Search application records
-- View simple statistics
-- Save data in browser local storage
-- Responsive layout for desktop and mobile
-
-## Why I Made This Project
-
-This project helps job seekers organize their job applications in one place.  
-It is also a beginner-friendly portfolio project for learning GitHub, web development, and GitHub Pages.
+- Add new job application records
+- Track company name, position, country, status, date, and notes
+- Search applications by keyword
+- View simple application statistics
+- Save data automatically in browser local storage
+- Delete application records
+- Responsive design for desktop and mobile devices
 
 ## Technologies Used
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 - Local Storage
+- GitHub Pages
 
 ## How to Use
 
-1. Open `index.html` in a browser.
-2. Fill in the application form.
+1. Open the live demo link.
+2. Fill in the job application form.
 3. Click **Save Application**.
 4. Use the search box to find saved applications.
-
-## GitHub Pages
-
-You can publish this project using GitHub Pages:
-
-1. Create a new repository on GitHub.
-2. Upload all project files.
-3. Open **Settings**.
-4. Go to **Pages**.
-5. Select branch `main`.
-6. Save and wait for the website link.
+5. Click **Delete** to remove an application record.
 
 ## Project Structure
 
@@ -49,9 +45,33 @@ job-application-tracker/
 ├── index.html
 ├── style.css
 ├── script.js
-└── README.md
+├── README.md
+└── .gitignore
 ```
+
+## What I Learned
+
+Through this project, I practiced:
+
+- Creating a simple web application layout
+- Styling a responsive dashboard with CSS
+- Using JavaScript to add, search, and delete data
+- Saving data with browser local storage
+- Publishing a website with GitHub Pages
+- Writing a professional README for GitHub
+
+## Future Improvements
+
+- Add edit feature for saved applications
+- Add filter by application status
+- Add export to CSV feature
+- Add dark mode
+- Improve dashboard statistics
+
+## Repository Description Suggestion
+
+A simple job application tracker built with HTML, CSS, and JavaScript.
 
 ## Author
 
-Created as a simple beginner portfolio project.
+Created by [tipstrikpedia](https://github.com/tipstrikpedia) as a beginner-friendly portfolio project.
