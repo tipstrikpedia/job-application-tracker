@@ -8,12 +8,15 @@
 </head>
 <body>
   <header class="hero">
-    <div>
-      <p class="eyebrow">Simple Portfolio Project</p>
-      <h1>Job Application Tracker</h1>
-      <p class="subtitle">
-        Track job applications, countries, status, and notes in one simple dashboard.
-      </p>
+    <div class="hero-content">
+      <div>
+        <p class="eyebrow">Simple Portfolio Project</p>
+        <h1>Job Application Tracker</h1>
+        <p class="subtitle">
+          Track job applications, countries, status, and notes in one simple dashboard.
+        </p>
+      </div>
+      <button type="button" id="themeToggle" class="secondary-btn">Dark Mode</button>
     </div>
   </header>
 
@@ -34,7 +37,7 @@
     </section>
 
     <section class="panel">
-      <h2>Add New Application</h2>
+      <h2 id="formTitle">Add New Application</h2>
       <form id="applicationForm" class="form-grid">
         <label>
           Company
@@ -71,14 +74,27 @@
           <textarea id="notes" placeholder="Write notes, contact name, or next step"></textarea>
         </label>
 
-        <button type="submit">Save Application</button>
+        <div class="form-actions full">
+          <button type="submit" id="saveButton">Save Application</button>
+          <button type="button" id="cancelEditButton" class="secondary-btn hidden">Cancel Edit</button>
+        </div>
       </form>
     </section>
 
     <section class="panel">
       <div class="toolbar">
         <h2>Application List</h2>
-        <input type="search" id="searchInput" placeholder="Search company, position, country..." />
+        <div class="toolbar-actions">
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="All">All Status</option>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Accepted">Accepted</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <input type="search" id="searchInput" placeholder="Search company, position, country..." />
+          <button type="button" id="exportButton" class="secondary-btn">Export CSV</button>
+        </div>
       </div>
 
       <div class="table-wrapper">
